@@ -1,0 +1,260 @@
+
+#uniform-datadl {
+	position: absolute;
+	bottom: 55px;
+	left: 18px;
+	line-height: 16px;
+	z-index: 3005;
+	color: #444;
+}
+
+#uniform-datadl :hover {
+	color: #000;
+}
+
+#link {
+	position: absolute;
+	z-index: 3000;
+	bottom: 45px;
+	right: 32px;
+	cursor: pointer;
+}
+#closebtn {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+#advancedbox {
+	position: absolute;
+	top: 200px;
+	left: 220px;
+	width: 360px;
+	border: 2px solid rgb(68,121,170);
+	background-color: #F7F9FE;
+	padding: 10px;
+	z-index: 7500;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#uniform-printbtns {
+	position: absolute;
+	bottom: 25px;
+	left: 18px;
+	line-height: 16px;
+	z-index: 3005;
+	color: #444;
+}
+
+#uniform-printbtns :hover {
+	color: #000;
+}
+
+#povlevel {
+	width: 180px;
+}
+
+#af_box {
+	width: 180px;
+}
+
+#at_box {
+	width: 180px;
+}
+
+#povlevel {
+	position: absolute;
+	z-index: 3100;
+	top: 21px;
+	right: 50px;
+}
+
+
+#af_box {
+	position: absolute;
+	z-index: 3100;
+	top: 23px;
+	right: 210px;
+}
+
+#af_label{
+	position: absolute;
+	z-index: 3100;
+	top: 28px;
+	right: 390px;
+}
+
+#at_box {
+	position: absolute;
+	z-index: 3100;
+	top: 52px;
+	right: 210px;
+}
+
+#at_label{
+	position: absolute;
+	z-index: 3100;
+	top: 57px;
+	right: 390px;
+}
+
+
+.map .logo-med {
+	bottom: 5px;
+	right: 10px;
+	width: 46px;
+	height: 22px;
+}
+
+table.smallfont {
+	font-family: verdana, arial, sans-serif;
+	font-size: 10px;
+	color: #333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.smallfont th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.smallfont td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+#header {
+	border: 1.5px solid #ADADAD;
+}
+
+#rightPane {
+	border: 1.5px solid #ADADAD;
+}
+
+#legendDiv path {
+	fill-opacity: 0.6 !important;
+}
+
+#legendDiv {
+	padding-left: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 0;
+	position: absolute !important;
+	right: 22px;
+	top: 184px;
+	z-index: 7000;
+	width: 175px;
+	background: #FFF;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #AAA;
+	font-size: 100%;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#search {
+	position: absolute;
+	z-index: 8000;
+	top: 115px;
+	right: 27px;
+}
+
+div.button span {
+	font-family: Copse, Georgia, serif;
+}
+
+body {
+	font-family: Copse, Georgia, serif;
+}
+
+.btnspan {
+	text-transform: none !important;
+	color: #234E70;
+}
+
+.btnspan:hover {
+	color: black;
+}
+
+#title {
+	color: rgb(68,121,170);
+	font-family: Copse, Georgia, serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	letter-spacing: normal;
+	outline-color: rgb(143, 2, 6);
+	outline-style: none;
+	outline-width: 0px;
+	text-decoration: none;
+	text-shadow: rgb(252, 249, 238) 0px 1px 0px, rgba(0, 0, 0, 0.14902) 0px 2px 0px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+}
+
+#subtitle {
+	color: rgb(32,60,85);
+	font-family: Copse, Georgia, serif;
+	outline-color: rgb(143, 2, 6);
+	outline-style: none;
+	outline-width: 0px;
+	text-decoration: none;
+	text-shadow: rgb(252, 249, 238) 0px 1px 0px, rgba(0, 0, 0, 0.14902) 0px 2px 0px;
+	position: absolute;
+	bottom: 14px;
+	left: 15px;
+	padding-left: 10px;
+}
+
+#uniform-abovebox2 span {
+	width: 85px;
+}
+
+#uniform-abovebox2 {
+	position: absolute;
+	z-index: 3005;
+	top: 155px;
+	right: 20px;
+	text-align: center;
+	cursor: pointer;
+	font-family: Copse, Georgia, serif;
+	color: #444;
+}
+
+#uniform-abovebox2 :hover {
+	color: #000;
+}
+
+
+#chkdiv{
+	position: absolute;
+	z-index: 3100;
+	top: 124px;
+	left: 80px;
+		padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 0px;
+	width: 175px;
+	background: white;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #666666;
+	font-size: 70%;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}

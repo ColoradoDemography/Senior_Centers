@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9" /> 
+    <title>Poverty by Age ACS 2008-2012</title>
+      <link rel="icon" type="image/png" href="img/COfavicon2.png">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
+<link rel="stylesheet" href="https://js.arcgis.com/3.10/js/esri/css/esri.css">
+        <link rel="stylesheet" href="css/layout.css">
+	
+	  <!-- Make sure your CSS file is listed before jQuery -->
+<link rel="stylesheet" href="css/uniform.aristo.css" media="screen" />
+		<script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery-ui.js"></script>		
+<script src="js/jquery.uniform.min.js"></script>
+
+<!--[if IE]>
+<style>
+	#header{
+  border:solid 1px #999;
+  background: #E8E8E8;}
+</style>
+<![endif]-->
+
+
+    <link rel="stylesheet" href="css/style3.css">
+
+
+	
+	<script>
+		var dojoConfig = { parseOnLoad: true };
+	</script>
+	
+    <script src="https://js.arcgis.com/3.10/"></script>
+
+    <script src="js/indiv.js"></script>
+
+
+    
+  </head>
+
+  <body class="claro">
+
+	<div id="mainWindow" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline'" style="width:100%; height:100%;">
+
+      <div id="header" class="shadow roundedCorners" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
+
+        <div id="title"></div>
+        <div id="subtitle"></div>
+
+      </div>
+      <div id="mapDiv" class="roundedCorners shadow" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'"></div>
+
+    </div>
+	
+	<div id="povlevel">
+		<span>Percent of Individuals:</span>	
+		<select id="levelinput" onChange="handleClick();">
+		<option value="0" >Below 50% Poverty</option>
+		<option value="1">Below 75% Poverty</option>
+		<option value="2" selected>Below 100% Poverty</option>
+		<option value="3">Below 125% Poverty</option>
+		<option value="4">Below 150% Poverty</option>
+		<option value="5">Below 175% Poverty</option>
+		<option value="6">Below 185% Poverty</option>	
+		<option value="7">Below 200% Poverty</option>
+		<option value="8">Below 300% Poverty</option>
+		<option value="9">Below 400% Poverty</option>	
+		<option value="10">Below 500% Poverty</option>		
+		<option value="11">At or Above 500% Poverty</option>				
+		</select>
+	</div>
+
+	
+	<div id="af_box">
+		<select id="agefrom" onChange="handleClick();">
+		<option value="0" selected>Age 0</option>
+		<option value="1">Age 6</option>
+		<option value="2">Age 12</option>
+		<option value="3">Age 18</option>
+		<option value="4">Age 25</option>
+		<option value="5">Age 35</option>
+		<option value="6">Age 45</option>
+		<option value="7">Age 55</option>
+		<option value="8">Age 65</option>	
+		<option value="9">Age 75</option>			
+		</select>
+	</div>
+
+	<span id="af_label">From:</span>
+	
+	<div id="at_box">
+		<select id="ageto" onChange="handleClick();">
+		<option value="0">Age 5</option>
+		<option value="1">Age 11</option>
+		<option value="2">Age 17</option>
+		<option value="3">Age 24</option>
+		<option value="4">Age 34</option>
+		<option value="5">Age 44</option>
+		<option value="6">Age 54</option>
+		<option value="7">Age 64</option>
+		<option value="8">Age 74</option>	
+		<option value="9" selected>No Limit</option>		
+		</select>
+	</div>
+	
+	<span id="at_label">To:</span>	
+	
+	<div id="legendDiv" style="display:none;"></div>
+
+	<div id='chkdiv'><form>
+	<input type="checkbox" id="chk1"><span>Congregate Dining Centers</span><br />
+	<input type="checkbox" id="chk2"><span>Age 55+ Comparative Density</span></form>
+	</div>
+	
+	<div id="uniform-abovebox2" class="button" onmouseover="$(this).addClass('hover');"  onmouseout="$(this).removeClass('hover');" style="-moz-user-select: none;"  onclick="$('#legendDiv').toggle();"><span>Legend</span></div>
+
+	<div id="search"></div>
+	
+
+	
+	<div id='link' title="Map Information"><img height="20" width="20" onclick="closeadvancedbox();" src='img/qmark3.gif' /></div>
+		
+	<div id="advancedbox" style="display: none;">
+
+<img id="closebtn" src="img/closebtn.png" onclick="closeadvancedbox();"/>
+
+<span style="font-size: 70%"><p><b>Credits:</b><br />Built with <a href="http://www.arcgis.com/features/" target="_blank">ArcGIS Online</a> and the <a href="http://developers.arcgis.com/en/javascript/" target="_blank">ESRI Javascript API</a>. User Interface by <a href="http://uniformjs.com/" target="_blank">Uniform.js</a>.  Some Colorschemes courtesy of <a href="http://colorbrewer2.org/" target="_blank">Colorbrewer</a>.  Print Service created with <a href="http://phantomjs.org/" target="_blank">Phantom.js</a>.</p></span>
+<span style="font-size: 70%"><p>Created by: <a href="http://www.colorado.gov/cs/Satellite/DOLA-Main/CBON/1251590805419" target="_blank">Colorado State Demography Office</a></p></span>			
+</div>
+
+
+<div id="uniform-datadl" class="button" onmouseover="$(this).addClass('hover');"  onmouseout="$(this).removeClass('hover');"style="-moz-user-select: none;"  onclick="window.open('https://dola.colorado.gov/gis-php/files/ACS0812_B17024.xlsx','_blank','fullscreen=yes,location=no,menubar=no,status=no,titlebar=no,toolbar=no')"><span>Data (XLSX)</span></div>
+
+
+  </body>
+</html>
